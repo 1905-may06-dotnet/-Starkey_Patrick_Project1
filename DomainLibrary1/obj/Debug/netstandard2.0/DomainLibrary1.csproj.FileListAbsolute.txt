@@ -1,0 +1,12 @@
+C:\Revature\-Starkey_Patrick_Project1\DomainLibrary1\bin\Debug\netstandard2.0\DomainLibrary1.deps.json
+C:\Revature\-Starkey_Patrick_Project1\DomainLibrary1\bin\Debug\netstandard2.0\DomainLibrary1.dll
+C:\Revature\-Starkey_Patrick_Project1\DomainLibrary1\bin\Debug\netstandard2.0\DomainLibrary1.pdb
+C:\Revature\-Starkey_Patrick_Project1\DomainLibrary1\obj\Debug\netstandard2.0\DomainLibrary1.csprojAssemblyReference.cache
+C:\Revature\-Starkey_Patrick_Project1\DomainLibrary1\obj\Debug\netstandard2.0\DomainLibrary1.csproj.CoreCompileInputs.cache
+C:\Revature\-Starkey_Patrick_Project1\DomainLibrary1\obj\Debug\netstandard2.0\DomainLibrary1.AssemblyInfoInputs.cache
+C:\Revature\-Starkey_Patrick_Project1\DomainLibrary1\obj\Debug\netstandard2.0\DomainLibrary1.AssemblyInfo.cs
+C:\Revature\-Starkey_Patrick_Project1\DomainLibrary1\obj\Debug\netstandard2.0\DomainLibrary1.dll
+C:\Revature\-Starkey_Patrick_Project1\DomainLibrary1\obj\Debug\netstandard2.0\DomainLibrary1.pdb
+C:\Revature\-Starkey_Patrick_Project1\DomainLibrary1\bin\Debug\netstandard2.0\PizzaBoxContext.dll
+C:\Revature\-Starkey_Patrick_Project1\DomainLibrary1\bin\Debug\netstandard2.0\PizzaBoxContext.pdb
+C:\Revature\-Starkey_Patrick_Project1\DomainLibrary1\obj\Debug\netstandard2.0\DomainLibrary1.csproj.CopyComplete

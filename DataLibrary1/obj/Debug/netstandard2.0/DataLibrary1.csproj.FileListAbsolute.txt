@@ -1,0 +1,9 @@
+C:\Revature\-Starkey_Patrick_Project1\DataLibrary1\bin\Debug\netstandard2.0\DataLibrary1.deps.json
+C:\Revature\-Starkey_Patrick_Project1\DataLibrary1\bin\Debug\netstandard2.0\DataLibrary1.dll
+C:\Revature\-Starkey_Patrick_Project1\DataLibrary1\obj\Debug\netstandard2.0\DataLibrary1.csprojAssemblyReference.cache
+C:\Revature\-Starkey_Patrick_Project1\DataLibrary1\obj\Debug\netstandard2.0\DataLibrary1.csproj.CoreCompileInputs.cache
+C:\Revature\-Starkey_Patrick_Project1\DataLibrary1\obj\Debug\netstandard2.0\DataLibrary1.AssemblyInfoInputs.cache
+C:\Revature\-Starkey_Patrick_Project1\DataLibrary1\obj\Debug\netstandard2.0\DataLibrary1.AssemblyInfo.cs
+C:\Revature\-Starkey_Patrick_Project1\DataLibrary1\bin\Debug\netstandard2.0\DataLibrary1.pdb
+C:\Revature\-Starkey_Patrick_Project1\DataLibrary1\obj\Debug\netstandard2.0\DataLibrary1.dll
+C:\Revature\-Starkey_Patrick_Project1\DataLibrary1\obj\Debug\netstandard2.0\DataLibrary1.pdb

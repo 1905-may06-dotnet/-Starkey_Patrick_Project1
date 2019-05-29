@@ -1,0 +1,14 @@
+C:\Revature\-Starkey_Patrick_Project1\PizzaBoxTest\bin\Debug\netcoreapp2.2\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Revature\-Starkey_Patrick_Project1\PizzaBoxTest\bin\Debug\netcoreapp2.2\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Revature\-Starkey_Patrick_Project1\PizzaBoxTest\bin\Debug\netcoreapp2.2\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Revature\-Starkey_Patrick_Project1\PizzaBoxTest\bin\Debug\netcoreapp2.2\PizzaBoxTest.deps.json
+C:\Revature\-Starkey_Patrick_Project1\PizzaBoxTest\bin\Debug\netcoreapp2.2\PizzaBoxTest.runtimeconfig.json
+C:\Revature\-Starkey_Patrick_Project1\PizzaBoxTest\bin\Debug\netcoreapp2.2\PizzaBoxTest.runtimeconfig.dev.json
+C:\Revature\-Starkey_Patrick_Project1\PizzaBoxTest\bin\Debug\netcoreapp2.2\PizzaBoxTest.dll
+C:\Revature\-Starkey_Patrick_Project1\PizzaBoxTest\bin\Debug\netcoreapp2.2\PizzaBoxTest.pdb
+C:\Revature\-Starkey_Patrick_Project1\PizzaBoxTest\obj\Debug\netcoreapp2.2\PizzaBoxTest.csprojAssemblyReference.cache
+C:\Revature\-Starkey_Patrick_Project1\PizzaBoxTest\obj\Debug\netcoreapp2.2\PizzaBoxTest.csproj.CoreCompileInputs.cache
+C:\Revature\-Starkey_Patrick_Project1\PizzaBoxTest\obj\Debug\netcoreapp2.2\PizzaBoxTest.AssemblyInfoInputs.cache
+C:\Revature\-Starkey_Patrick_Project1\PizzaBoxTest\obj\Debug\netcoreapp2.2\PizzaBoxTest.AssemblyInfo.cs
+C:\Revature\-Starkey_Patrick_Project1\PizzaBoxTest\obj\Debug\netcoreapp2.2\PizzaBoxTest.dll
+C:\Revature\-Starkey_Patrick_Project1\PizzaBoxTest\obj\Debug\netcoreapp2.2\PizzaBoxTest.pdb
