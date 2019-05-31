@@ -15,6 +15,9 @@ namespace DomainLibrary1
         void insertCustomer(Customers newCustomer);
         void insertAddress(CustomerAddress newAddress);
         void Save();
+        IEnumerable<Customers> GetCustomers();
+        IEnumerable<CustomerAddress> GetAddresses();
+        IEnumerable<Pizzahistory> GetPizza();
 
         //
 

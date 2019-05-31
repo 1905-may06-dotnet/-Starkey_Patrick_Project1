@@ -22,14 +22,14 @@ namespace PizzaBoxContext.Context
         public virtual DbSet<PizzasToCreate> PizzasToCreate { get; set; }
         public virtual DbSet<StoreLocation> StoreLocation { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=utadbt.database.windows.net;Database=PizzaBox;user id=starkeycs;Password=CodeLikeABoss!;");
-            }
-        }
+//        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+//        {
+//            if (!optionsBuilder.IsConfigured)
+//            {
+//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+//              //  optionsBuilder.UseSqlServer("Server=utadbt.database.windows.net;Database=PizzaBox;user id=starkeycs;Password=CodeLikeABoss!;");
+//            }
+//        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

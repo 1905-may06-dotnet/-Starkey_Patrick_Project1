@@ -20,12 +20,20 @@ namespace PizzaBoxContext
 
 
 
-       
         /// //////////////////////////////
 
         public void addPizza(Pizzahistory newPizza)
         {
             _db.Pizzahistory.Add(PizzaBoxContext.Mapper.Map(newPizza));
+        }
+
+        public IEnumerable<DomainLibrary1.Customers> GetCustomers()
+        {
+            return _db.Customers.Select(x => Mapper.Map(x));
+        }
+        public IEnumerable<DomainLibrary1.CustomerAddress> GetAddresses()
+        {
+            return _db.CustomerAddress.Select(x => Mapper.Map(x));
         }
 
         public Inventory GetInventory(int storeid)
@@ -54,12 +62,18 @@ namespace PizzaBoxContext
 
         public Customers LogIn(string id)
         {
-            return Mapper.Map(_db.Customers.Where(i => i.UserId == id).FirstOrDefault());
+            
+            return Mapper.Map(_db.Customers.Find(id));
         }
 
         public void Save()
         {
             _db.SaveChanges();
+        }
+
+        public IEnumerable<Pizzahistory> GetPizza()
+        {
+            return _db.Pizzahistory.Select(x => Mapper.Map(x));
         }
     }
 }

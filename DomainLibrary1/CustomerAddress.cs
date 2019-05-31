@@ -6,11 +6,6 @@ namespace DomainLibrary1
     {
 
         private string _userid;
-        private string _Street;
-        private string _State;
-        private string _ZipCode;
-        private string _City;
-        
         public string Street { get; set; }
         public string State { get; set; }
         public string ZipCode { get; set; }

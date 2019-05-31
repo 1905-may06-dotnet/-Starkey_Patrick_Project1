@@ -32,3 +32,7 @@ C:\Revature\-Starkey_Patrick_Project1\PizzaBox\obj\Debug\netcoreapp2.2\PizzaBoxC
 C:\Revature\-Starkey_Patrick_Project1\PizzaBox\obj\Debug\netcoreapp2.2\PizzaBoxClient.pdb
 C:\Revature\-Starkey_Patrick_Project1\PizzaBox\bin\Debug\netcoreapp2.2\PizzaBoxContext.dll
 C:\Revature\-Starkey_Patrick_Project1\PizzaBox\bin\Debug\netcoreapp2.2\PizzaBoxContext.pdb
+C:\Revature\-Starkey_Patrick_Project1\PizzaBox\obj\Debug\netcoreapp2.2\Razor\Views\Home\newAccount.g.cshtml.cs
+C:\Revature\-Starkey_Patrick_Project1\PizzaBox\obj\Debug\netcoreapp2.2\Razor\Views\User\LogIn.g.cshtml.cs
+C:\Revature\-Starkey_Patrick_Project1\PizzaBox\obj\Debug\netcoreapp2.2\Razor\Views\Pizza\PizzaOrder.g.cshtml.cs
+C:\Revature\-Starkey_Patrick_Project1\PizzaBox\obj\Debug\netcoreapp2.2\Razor\Views\Pizza\History.g.cshtml.cs

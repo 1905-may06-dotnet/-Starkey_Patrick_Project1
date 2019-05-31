@@ -10,9 +10,6 @@ namespace DomainLibrary1
     {
         private string _userid;
         private string _password;
-        private string _Firstname;
-        private string _Lastname;
-        private int? _Accesslvl;
         public string Firstname { get; set; }
         public string Lastname { get; set; }
         public int? Accesslvl { get; set; }
