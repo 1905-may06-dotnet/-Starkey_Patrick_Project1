@@ -1,4 +1,4 @@
-﻿@model PizzaBoxClient.Models.Pizzahistory
+﻿@model IEnumerable<PizzaBoxClient.Models.Pizzahistory>
 
 @{
     ViewData["Title"] = "History";
@@ -6,63 +6,69 @@
 
 <h1>History</h1>
 
-<div>
-    <h4>Pizzahistory</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Size)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Size)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Crust)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Crust)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Topping1)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Topping1)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Topping2)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Topping2)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Topping3)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Topping3)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Topping4)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Topping4)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Topping5)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Topping5)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Orderdate)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Orderdate)
-        </dd>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Size)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Crust)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Topping1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Topping2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Topping3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Topping4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Topping5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orderdate)
+            </th>
 
 
-    </dl>
-</div>
-<div>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    <a asp-action="Index">Back to List</a>
-</div>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Size)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Crust)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Topping1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Topping2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Topping3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Topping4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Topping5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Orderdate)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

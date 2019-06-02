@@ -3,54 +3,40 @@ namespace DomainLibrary1
 {
     public class PizzaOrder
     {
-        //need to add date compare to here
-        public string AddTopping(int c)
+
+        private decimal _cost;
+        private int _top;
+        public int top { get { return _top; } set { _top = value; } }
+        public decimal cost { get { return _cost; } set { _cost = value; } }
+
+        private int _orderCount;
+        public int orderCount { get { return _orderCount; } set { _orderCount = value; } }
+        public bool Count()
+        {
+            if (_orderCount >= 100 || orderCount<=0)
+            {
+
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+
+        }
+      
+
+        public void AddTopping(string n)
 
         {
-            switch (c)
+            if (n == null)
             {
-                case 1:
-
-                    return "ham";
-
-                case 2:
-
-                    return "Pinapple";
-
-
-
-                case 3:
-
-                    return "Peperoni";
-
-
-
-                case 4:
-
-                    return "Bacon";
-
-
-
-                case 5:
-
-                    return "Mushroom";
-
-
-
-                case 6:
-
-                    return "anchovies";
-
-
-
-                case 7:
-
-                    return "";
-
-
-
+                
             }
-            return "";
+            else { top = top + 1; }       
+
+
         }
 
         public Pizzahistory pizzaAdd<S, C, T>(string id, S size, C crust, string Topping1, string Topping2, string Topping3, string Topping4, string Topping5, int storId)
@@ -166,6 +152,25 @@ namespace DomainLibrary1
 
             }
         }
+        public decimal TotalCost(decimal total,string size,int toppings)
+        {
+            total = total + Cost(size, toppings);
+                
+                 return (total);
+        }
+        public bool checkcost()
+        {
+
+            if (cost >= 5000)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
 
 
         //void Createorder()

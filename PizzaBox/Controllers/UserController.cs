@@ -24,29 +24,10 @@ namespace PizzaBoxClient.Controllers
         // GET: User
         public ActionResult Index()
         {
-            var custs = db.GetCustomers();
-            foreach (var cust in custs)
-            {
-                c = new Models.Customers();
-                
-                c.Userid = cust.Userid;
-                c.Accesslvl = cust.Accesslvl;
-                c.Firstname = cust.Firstname;
-                c.Lastname = cust.Lastname;
-                c.password = cust.password;
-                customersList.Add(c);
-            }
+           
 
-            //var addres = db.GetAddresses();
-            //foreach (var ad in addres)
-            //{
-            //    a.Userid = ad.Userid;
-            //    a.Street = ad.Street;
-            //    a.State = ad.State;
-            //    a.City = ad.City;
-            //    a.ZipCode = ad.ZipCode;
-            //    AddressesList.Add(a);
-            //}
+
+ 
             return View();
 
             
@@ -59,7 +40,7 @@ namespace PizzaBoxClient.Controllers
         //    return View();
         //}
         [HttpGet("Login")]
-       public ActionResult LogIn(Models.Customers customers)
+       public ActionResult Login(Models.Customers customers)
         {
             return View();
         }
@@ -74,7 +55,7 @@ namespace PizzaBoxClient.Controllers
                 {
                     //HttpContext.Session.SetString("UserId",UserId);
                     TempData["UserId"] = UserId;
-                    return RedirectToAction("PizzaOrder","Pizza");
+                    return RedirectToAction("History","Pizza");
                 }
                 else
                 {
@@ -94,45 +75,92 @@ namespace PizzaBoxClient.Controllers
             throw new NotImplementedException();
         }
 
- //       [HttpGet]
- //public ActionResult Menu()
- //       {
- //           return View();
- //       }
+        //       [HttpGet]
+        //public ActionResult Menu()
+        //       {
+        //           return View();
+        //       }
+
+
+        [HttpGet("Create")]
+        public ActionResult Create()
+        {
+
+
+            return View();
+        }
 
 
 
 
 
 
+    // GET: User/Create
+    [HttpPost("Create")]
+        public ActionResult Create(IFormCollection collection,Models.Customers C)
+        {
+            //DomainLibrary1.CustomerAddress CA = new CustomerAddress();
+            DomainLibrary1.Customers Cust = new Customers();
+            Cust.Userid = C.Userid;
+            Cust.password = C.password;
+            Cust.Firstname = C.Firstname;
+            Cust.Lastname = C.Lastname;
+            Cust.Accesslvl = 1;
+            TempData["UserId"] = Cust.Userid;
+            try
+            {
+                db.insertCustomer(Cust);
+                db.Save();
+            
+            }
+            catch (Exception)
+            {
+
+                return View();
+            }
+
+
+            return RedirectToAction("CreateAddress");
+        }
+
+        [HttpGet("CreateAddress")]
+        public ActionResult CreateAddress()
+        {
+
+
+            return View();
+        }
+        [HttpPost("CreateAddress")]
+        public ActionResult CreateAddress(IFormCollection collection, Models.CustomerAddress C)
+        {
+            //DomainLibrary1.CustomerAddress CA = new CustomerAddress();
+            DomainLibrary1.CustomerAddress Cust = new CustomerAddress();
+            Cust.Userid = TempData["UserId"].ToString();
+            Cust.Street = C.Street;
+            Cust.City = C.City;
+            Cust.State = C.State;
+            Cust.ZipCode = C.ZipCode;
+            TempData["UserId"] = Cust.Userid;
+            try
+            {
+                db.insertAddress(Cust);
+                db.Save();
+            }
+            catch (Exception)
+            {
+                
+                return View();
+            }
+            return RedirectToAction("PizzaOrder", "Pizza");
+        }
 
 
 
 
-        // GET: User/Create
-        //public ActionResult Create()
-        //{
-        //    //DomainLibrary1.Customers customers = new Customers();
-        //    //customers
-        //    return View();
-        //}
 
-        //// POST: User/Create
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Create(IFormCollection collection)
-        //{
-        //    try
-        //    {
-        //        // TODO: Add insert logic here
 
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
+        // POST: User/Create
+
 
         //// GET: User/Edit/5
         //public ActionResult Edit(int id)

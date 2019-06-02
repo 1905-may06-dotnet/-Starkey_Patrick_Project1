@@ -36,3 +36,8 @@ C:\Revature\-Starkey_Patrick_Project1\PizzaBox\obj\Debug\netcoreapp2.2\Razor\Vie
 C:\Revature\-Starkey_Patrick_Project1\PizzaBox\obj\Debug\netcoreapp2.2\Razor\Views\User\LogIn.g.cshtml.cs
 C:\Revature\-Starkey_Patrick_Project1\PizzaBox\obj\Debug\netcoreapp2.2\Razor\Views\Pizza\PizzaOrder.g.cshtml.cs
 C:\Revature\-Starkey_Patrick_Project1\PizzaBox\obj\Debug\netcoreapp2.2\Razor\Views\Pizza\History.g.cshtml.cs
+C:\Revature\-Starkey_Patrick_Project1\PizzaBox\obj\Debug\netcoreapp2.2\Razor\Views\User\CreateAddress.g.cshtml.cs
+C:\Revature\-Starkey_Patrick_Project1\PizzaBox\obj\Debug\netcoreapp2.2\Razor\Views\User\Create.g.cshtml.cs
+C:\Revature\-Starkey_Patrick_Project1\PizzaBox\obj\Debug\netcoreapp2.2\Razor\Views\User\Index.g.cshtml.cs
+C:\Revature\-Starkey_Patrick_Project1\PizzaBox\obj\Debug\netcoreapp2.2\Razor\Views\Pizza\Store.g.cshtml.cs
+C:\Revature\-Starkey_Patrick_Project1\PizzaBox\obj\Debug\netcoreapp2.2\Razor\Views\Pizza\Inventory.g.cshtml.cs

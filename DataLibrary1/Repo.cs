@@ -1,8 +1,7 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
-using System.Linq;
+﻿using DomainLibrary1;
+using System;
 using System.Collections.Generic;
-using DomainLibrary1;
+using System.Linq;
 namespace PizzaBoxContext
 {
     public class Repo : IRepo
@@ -36,18 +35,25 @@ namespace PizzaBoxContext
             return _db.CustomerAddress.Select(x => Mapper.Map(x));
         }
 
-        public Inventory GetInventory(int storeid)
+        public IEnumerable<Inventory> GetInventory()
         {
-            
 
-            return Mapper.Map(_db.Inventory.Where(i => i.StoreId == storeid).FirstOrDefault());
+
+            var temp = _db.Inventory.Select(x => Mapper.Map(x));
+            return temp;
             //return Mapper.Map(_db.Inventory.AsNoTracking().First(i => i.StoreId == storeid)); lack of sleep
         }
-        
+        public IEnumerable<StoreLocation> GetStores()
+        {
+
+            var temp = _db.StoreLocation.Select(x => Mapper.Map(x));
+            return temp;
+        }
 
         public IEnumerable<Pizzahistory> GetPizzahistories(string id)
         {
-            return _db.Pizzahistory.Select(i => Mapper.Map(i));
+            return Mapper.Map(_db.Pizzahistory.Where(i => i.UserId.Contains(id)));
+
         }
 
         public void insertAddress(CustomerAddress newAddress)
@@ -75,5 +81,7 @@ namespace PizzaBoxContext
         {
             return _db.Pizzahistory.Select(x => Mapper.Map(x));
         }
+
+
     }
 }

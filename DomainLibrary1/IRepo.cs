@@ -7,11 +7,11 @@ namespace DomainLibrary1
     public interface IRepo
     {
 
-        //getsCustomers user and
+        IEnumerable<StoreLocation> GetStores();
         IEnumerable<Pizzahistory>GetPizzahistories (string id);
         Customers LogIn(string id);
         void addPizza(Pizzahistory newPizza);
-        Inventory GetInventory(int storeid);
+        IEnumerable <Inventory> GetInventory();
         void insertCustomer(Customers newCustomer);
         void insertAddress(CustomerAddress newAddress);
         void Save();

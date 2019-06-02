@@ -11,10 +11,11 @@ namespace PizzaBoxClient.Models
     {
 
         [DisplayName("Password")]
+        [Required(ErrorMessage = "Password can not be empty")]
         public string password { get; set; }
 
         [DisplayName("Username")]
-        [Required(ErrorMessage = "userID can not be empty")]
+        [Required(ErrorMessage = "user Name can not be empty")]
         public string Userid { get; set; }
 
 
