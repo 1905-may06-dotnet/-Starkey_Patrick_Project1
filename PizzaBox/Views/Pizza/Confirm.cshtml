@@ -1,0 +1,72 @@
+﻿@model PizzaBoxClient.Models.Pizzahistory
+
+@{
+    ViewData["Title"] = "Confirm";
+}
+
+<h1>Confirm</h1>
+
+<div>
+    <h4>Pizzahistory</h4>
+    <hr />
+    <dl class="row">
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Size)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Size)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Crust)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Crust)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Topping1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Topping1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Topping2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Topping2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Topping3)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Topping3)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Topping4)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Topping4)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Topping5)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Topping5)
+        </dd>
+    </dl>
+</div>
+<div>
+    <form asp-action="Confirm">
+
+        <div class="form-group">
+
+            <input type="submit" value="Confirm" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+
+<div>
+
+    <a asp-action="Store">Cancel</a>
+
+</div>

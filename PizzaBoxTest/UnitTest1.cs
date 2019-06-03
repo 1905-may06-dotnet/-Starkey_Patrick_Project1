@@ -42,7 +42,7 @@ namespace PizzaBoxTest
             DomainLibrary1.PizzaOrder d = new DomainLibrary1.PizzaOrder();
             
             bool expected = false;
-            bool actual = d.canTheyLogIn(1,1,DateTime.Now);
+            bool actual = d.canTheyLogIn(1,1,DateTime.Now.AddDays(-2));
             Assert.AreEqual(expected, actual);
 
         }

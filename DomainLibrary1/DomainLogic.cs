@@ -117,19 +117,19 @@ namespace DomainLibrary1
 
                 if (storeId == orderFromID)
                 {
-                    return false;
+                    return true;
                 }
                 else
                 {
-                    return true;
+                    return false;
                 }
             }else if(DateTime.Compare(current.AddHours(-24), LastpizzaTime) < 0)
             {
-                return false;
+                return true;
             }
             else
             {
-                return true;
+                return false;
             }
             
         }
@@ -172,10 +172,7 @@ namespace DomainLibrary1
             }
         }
 
-        public bool canTheyLogIn(int? i, int id, DateTime? temp)
-        {
-            throw new NotImplementedException();
-        }
+
 
 
 

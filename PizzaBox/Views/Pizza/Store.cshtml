@@ -45,7 +45,7 @@
             </td>
             <td>
                 
-               
+                <a asp-action="PizzaOrder" asp-route-id=@item.StoreId>Bypass</a> @*for testing*@
                 @Html.ActionLink("Select", "Select", new { id = item.StoreId })
             </td>
         </tr>

@@ -55,7 +55,7 @@ namespace PizzaBoxClient.Controllers
                 {
                     //HttpContext.Session.SetString("UserId",UserId);
                     TempData["UserId"] = UserId;
-                    return RedirectToAction("History","Pizza");
+                    return RedirectToAction("Index","Pizza");
                 }
                 else
                 {

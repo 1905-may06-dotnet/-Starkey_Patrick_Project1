@@ -220,8 +220,8 @@ namespace PizzaBoxClient.Controllers
             DomainLibrary1.PizzaOrder d = new PizzaOrder();
             string Id = TempData["UserId"].ToString();
             var l = db.LastOne(Id);
-            DateTime? temp = l.Orderdate;
-            int? i = l.StoreId;
+            DateTime temp = (DateTime)l.Orderdate;
+            int i = (int)l.StoreId;
             if (d.canTheyLogIn(i,id,temp) == false)
             {
                 ViewData["Text"] = "Time out on Pizza";
@@ -256,15 +256,15 @@ namespace PizzaBoxClient.Controllers
 
 
         // GET: Pizza/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult UserByStore(int id)
         {
-            return View();
+            var inventories = db.GetCustomers();
         }
 
         // POST: Pizza/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult UserBySto(int id, IFormCollection collection)
         {
             try
             {

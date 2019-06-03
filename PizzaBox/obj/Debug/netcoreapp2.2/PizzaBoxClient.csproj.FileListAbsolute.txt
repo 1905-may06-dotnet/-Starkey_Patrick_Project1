@@ -42,3 +42,4 @@ C:\Revature\-Starkey_Patrick_Project1\PizzaBox\obj\Debug\netcoreapp2.2\Razor\Vie
 C:\Revature\-Starkey_Patrick_Project1\PizzaBox\obj\Debug\netcoreapp2.2\Razor\Views\Pizza\Store.g.cshtml.cs
 C:\Revature\-Starkey_Patrick_Project1\PizzaBox\obj\Debug\netcoreapp2.2\Razor\Views\Pizza\Inventory.g.cshtml.cs
 C:\Revature\-Starkey_Patrick_Project1\PizzaBox\obj\Debug\netcoreapp2.2\Razor\Views\Pizza\Index.g.cshtml.cs
+C:\Revature\-Starkey_Patrick_Project1\PizzaBox\obj\Debug\netcoreapp2.2\Razor\Views\Pizza\Confirm.g.cshtml.cs

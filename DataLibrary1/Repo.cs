@@ -26,7 +26,7 @@ namespace PizzaBoxContext
         {
             _db.Pizzahistory.Add(PizzaBoxContext.Mapper.Map(newPizza));
         }
-
+        }
         public IEnumerable<DomainLibrary1.Customers> GetCustomers()
         {
             return _db.Customers.Select(x => Mapper.Map(x));
