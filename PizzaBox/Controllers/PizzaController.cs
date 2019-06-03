@@ -10,7 +10,7 @@ namespace PizzaBoxClient.Controllers
 {
     public class PizzaController : Controller
     {
-        
+
         private readonly IRepo db;
         Models.Pizzahistory ph;
         DomainLibrary1.PizzaOrder DL = new PizzaOrder();
@@ -28,6 +28,8 @@ namespace PizzaBoxClient.Controllers
         // GET: Pizza
         public ActionResult Index()
         {
+            int temp = 0;
+            TempData["total"] = Convert.ToString(temp);
             HttpContext.Session.SetInt32("Count",0);
             return View();
         }
@@ -112,30 +114,30 @@ namespace PizzaBoxClient.Controllers
                     DL.AddTopping(ph.Topping4);
                     DL.AddTopping(ph.Topping5);
                     TempData["UserId"] = ph.UserId;
-                   
-                    DL.cost = DL.TotalCost((decimal)TempData["total"], ph.Size, DL.top);
+                    //string temp = TempData["total"].ToString();
+                    DL.cost = DL.TotalCost(0, ph.Size, DL.top);
                     DL.orderCount = (int)HttpContext.Session.GetInt32("Count") + 1;
                     ViewData["Total"] = DL.cost;
                     try
                     {
-                    TempData["Date"] = ph.Orderdate;
-                    TempData["StoreId"] = id;
-                    TempData["Size"] = pizza.Size;
-                    TempData["Crust"] = pizza.Crust;
-                    TempData["Topping1"] = pizza.Topping1;
-                    TempData["Toping2"] = pizza.Topping2;
-                    TempData["Toping3"] = pizza.Topping3;
-                    TempData["Toping4"] = pizza.Topping4;
-                    TempData["Toping5"] = pizza.Topping5;
-                    TempData["Total"] = (DL.cost);
+                    //TempData["Date"] = ph.Orderdate;
+                    //TempData["StoreId"] = id;
+                    //TempData["Size"] = pizza.Size;
+                    //TempData["Crust"] = pizza.Crust;
+                    //TempData["Topping1"] = pizza.Topping1;
+                    //TempData["Toping2"] = pizza.Topping2;
+                    //TempData["Toping3"] = pizza.Topping3;
+                    //TempData["Toping4"] = pizza.Topping4;
+                    //TempData["Toping5"] = pizza.Topping5;
+                    //TempData["Total"] = (DL.cost);
 
 
-                    //db.addPizza(ph);
-                    //db.Save();
+                    db.addPizza(ph);
+                    db.Save();
 
                     // TODO: Add insert logic here
                     //return View();
-                    return RedirectToAction("Confirm");
+                    return RedirectToAction("Index");
                     }
                     catch
                     {
@@ -256,10 +258,10 @@ namespace PizzaBoxClient.Controllers
 
 
         // GET: Pizza/Edit/5
-        public ActionResult UserByStore(int id)
-        {
-            var inventories = db.GetCustomers();
-        }
+        //public ActionResult UserByStore(int id)
+        //{
+        //    var inventories = db.GetCustomers();
+        //}
 
         // POST: Pizza/Edit/5
         [HttpPost]

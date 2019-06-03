@@ -89,7 +89,7 @@ namespace DomainLibrary1
 
                 sizeCost = 10;
 
-                return (sizeCost + (toppingsTotal) * 1.75m);
+                return (sizeCost + (toppingsTotal) * 5000m);
 
 
 
