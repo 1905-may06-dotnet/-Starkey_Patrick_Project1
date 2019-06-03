@@ -12,3 +12,6 @@ C:\Revature\-Starkey_Patrick_Project1\PizzaBoxTest\obj\Debug\netcoreapp2.2\Pizza
 C:\Revature\-Starkey_Patrick_Project1\PizzaBoxTest\obj\Debug\netcoreapp2.2\PizzaBoxTest.AssemblyInfo.cs
 C:\Revature\-Starkey_Patrick_Project1\PizzaBoxTest\obj\Debug\netcoreapp2.2\PizzaBoxTest.dll
 C:\Revature\-Starkey_Patrick_Project1\PizzaBoxTest\obj\Debug\netcoreapp2.2\PizzaBoxTest.pdb
+C:\Revature\-Starkey_Patrick_Project1\PizzaBoxTest\bin\Debug\netcoreapp2.2\DomainLibrary1.dll
+C:\Revature\-Starkey_Patrick_Project1\PizzaBoxTest\bin\Debug\netcoreapp2.2\DomainLibrary1.pdb
+C:\Revature\-Starkey_Patrick_Project1\PizzaBoxTest\obj\Debug\netcoreapp2.2\PizzaBoxTest.csproj.CopyComplete

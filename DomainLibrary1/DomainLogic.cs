@@ -4,12 +4,13 @@ namespace DomainLibrary1
     public class PizzaOrder
     {
 
-        private decimal _cost;
-        private int _top;
+        private static decimal _cost;
+        private static int _top;
+        
         public int top { get { return _top; } set { _top = value; } }
         public decimal cost { get { return _cost; } set { _cost = value; } }
 
-        private int _orderCount;
+        private static int _orderCount;
         public int orderCount { get { return _orderCount; } set { _orderCount = value; } }
         public bool Count()
         {
@@ -116,11 +117,11 @@ namespace DomainLibrary1
 
                 if (storeId == orderFromID)
                 {
-                    return true;
+                    return false;
                 }
                 else
                 {
-                    return false;
+                    return true;
                 }
             }else if(DateTime.Compare(current.AddHours(-24), LastpizzaTime) < 0)
             {
@@ -161,7 +162,7 @@ namespace DomainLibrary1
         public bool checkcost()
         {
 
-            if (cost >= 5000)
+            if (_cost >= 5000)
             {
                 return false;
             }
@@ -169,6 +170,11 @@ namespace DomainLibrary1
             {
                 return true;
             }
+        }
+
+        public bool canTheyLogIn(int? i, int id, DateTime? temp)
+        {
+            throw new NotImplementedException();
         }
 
 

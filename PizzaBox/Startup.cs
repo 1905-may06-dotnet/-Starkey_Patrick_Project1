@@ -28,6 +28,7 @@ namespace PizzaBox
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
@@ -40,6 +41,12 @@ namespace PizzaBox
             services.AddScoped<IRepo, Repo>();
             services.AddDbContext<Pizzboxdb>(optionsAction =>
             optionsAction.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddSession(op=> { op.IdleTimeout = TimeSpan.FromMinutes(60);
+                op.Cookie.HttpOnly = true;
+                op.Cookie.IsEssential = true;
+            });
+            services.AddDistributedMemoryCache();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -60,6 +67,10 @@ namespace PizzaBox
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+
+            app.UseSession();
+
+
 
             app.UseMvc(routes =>
             {

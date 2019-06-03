@@ -9,52 +9,80 @@
 <h4>Pizzahistory</h4>
 <hr />
 @ViewData["Text"]
+@ViewData["Total"]
 <div class="row">
     <div class="col-md-4">
         <form asp-action="PizzaOrder">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <h4>Size</h4>
+                @Html.DropDownList("Size",new List<SelectListItem>
+           {
+               new SelectListItem{Text="Small",Value="small",Selected =true},
+               new SelectListItem{Text="Medium",Value="Medium",Selected =false},
+               new SelectListItem{Text="Large",Value="Large",Selected=false}
+           })
+            </div>
+            <div class="form-group">
+                @Html.DropDownList("Crust",new List<SelectListItem>
+           { 
+                new SelectListItem{Text="thin",Value="thin",Selected =false},
+                new SelectListItem{Text="Pan",Value="pan",Selected =false},
+                new SelectListItem{Text="Regular",Value="regular",Selected=true}
+            })
+            </div>
+            <div class="form-group">
+                @Html.DropDownList("Topping1", new List<SelectListItem>
+                {
+                new SelectListItem{Text="Pepperoni",Value="pepperoni",Selected =true},
+                new SelectListItem{Text="Bacon",Value="bacon",Selected =false},
+                new SelectListItem{Text="Mushrooms",Value="Mushrooms",Selected=false},
+                new SelectListItem{Text="Ham",Value="ham",Selected=false},
+                new SelectListItem{Text="Anchovies",Value="anchovies",Selected=false}, },"")
+           
+            </div>
+            <div class="form-group">
+                @Html.DropDownList("Topping2", new List<SelectListItem>
+    {
+    new SelectListItem{Text="Pepperoni",Value="pepperoni",Selected =false},
+    new SelectListItem{Text="Bacon",Value="bacon",Selected =true},
+    new SelectListItem{Text="Mushrooms",Value="Mushrooms",Selected=false},
+    new SelectListItem{Text="Ham",Value="ham",Selected=false},
+    new SelectListItem{Text="Anchovies",Value="anchovies",Selected=false}, },"")
 
+</div>
             <div class="form-group">
-                <label asp-for="Size" class="control-label"></label>
-                <input asp-for="Size" class="form-control" />
-                <span asp-validation-for="Size" class="text-danger"></span>
+                @Html.DropDownList("Topping3", new List<SelectListItem>
+            {
+                new SelectListItem{Text="Pepperoni",Value="pepperoni",Selected =false},
+                        new SelectListItem{Text="Bacon",Value="bacon",Selected =false},
+                        new SelectListItem{Text="Mushrooms",Value="Mushrooms",Selected=false},
+                        new SelectListItem{Text="Ham",Value="ham",Selected=false},
+                        new SelectListItem{Text="Anchovies",Value="anchovies",Selected=false}, },"")
             </div>
             <div class="form-group">
-                <label asp-for="Crust" class="control-label"></label>
-                <input asp-for="Crust" class="form-control" />
-                <span asp-validation-for="Crust" class="text-danger"></span>
+                @Html.DropDownList("Topping4", new List<SelectListItem>
+        {
+            new SelectListItem{Text="Pepperoni",Value="pepperoni",Selected =false},
+                    new SelectListItem{Text="Bacon",Value="bacon",Selected =false},
+                    new SelectListItem{Text="Mushrooms",Value="Mushrooms",Selected=false},
+                    new SelectListItem{Text="Ham",Value="ham",Selected=false},
+                    new SelectListItem{Text="Anchovies",Value="anchovies",Selected=false}, }, "")
             </div>
             <div class="form-group">
-                <label asp-for="Topping1" class="control-label"></label>
-                <input asp-for="Topping1" class="form-control" />
-                <span asp-validation-for="Topping1" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Topping2" class="control-label"></label>
-                <input asp-for="Topping2" class="form-control" />
-                <span asp-validation-for="Topping2" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Topping3" class="control-label"></label>
-                <input asp-for="Topping3" class="form-control" />
-                <span asp-validation-for="Topping3" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Topping4" class="control-label"></label>
-                <input asp-for="Topping4" class="form-control" />
-                <span asp-validation-for="Topping4" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Topping5" class="control-label"></label>
-                <input asp-for="Topping5" class="form-control" />
-                <span asp-validation-for="Topping5" class="text-danger"></span>
+                @Html.DropDownList("Topping5", new List<SelectListItem>
+        {
+            new SelectListItem{Text="Pepperoni",Value="pepperoni",Selected =false},
+                    new SelectListItem{Text="Bacon",Value="bacon",Selected =false},
+                    new SelectListItem{Text="Mushrooms",Value="Mushrooms",Selected=false},
+                    new SelectListItem{Text="Ham",Value="ham",Selected=false},
+                    new SelectListItem{Text="Anchovies",Value="anchovies",Selected=false}, }, "")
             </div>
 
 
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
                 <input type="submit" value="Done" class="btn btn-primary" onclick="location.href='@Url.Action("Pizza", "Index")'" />
-
             </div>
         </form>
     </div>

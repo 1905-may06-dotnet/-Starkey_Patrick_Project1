@@ -28,23 +28,7 @@ namespace PizzaBoxClient.Controllers
         // GET: Pizza
         public ActionResult Index()
         {
-            var pizzas = db.GetPizza();
-            foreach(var pizza in pizzas)
-            {
-                ph = new Models.Pizzahistory();
-                ph.UserId = pizza.UserId;
-                ph.Size = pizza.Size;
-                ph.StoreId = pizza.StoreId;
-                ph.Orderid = pizza.Orderid;
-                ph.Crust = pizza.Crust;
-                ph.Orderdate = pizza.Orderdate;
-                ph.Topping1 = pizza.Topping1;
-                ph.Topping2 = pizza.Topping2;
-                ph.Topping3 = pizza.Topping3;
-                ph.Topping4 = pizza.Topping4;
-                ph.Topping5 = pizza.Topping5;
-                PizzaList.Add(ph);
-            }
+            HttpContext.Session.SetInt32("Count",0);
             return View();
         }
         //[HttpGet("History")]
@@ -85,12 +69,16 @@ namespace PizzaBoxClient.Controllers
 
         // GET: Pizza/Create
         [HttpGet("PizzaOrder")]
-        public ActionResult PizzaOrder()
+        public ActionResult PizzaOrder(int id)
         {
             return View();
         }
+
+
+        
         [HttpPost("PizzaOrder")]
         // POST: Pizza/Create
+       
         public ActionResult PizzaOrder(IFormCollection collection,Models.Pizzahistory pizza,int id)
         {
 
@@ -106,13 +94,13 @@ namespace PizzaBoxClient.Controllers
                     DomainLibrary1.Pizzahistory ph = new Pizzahistory();
                     ph.UserId = TempData["UserId"].ToString();
 
+                    
                     ph.Size = pizza.Size;
-                    ph.StoreId = 1;//need to store it
+                    //.StoreId = 1;//need to store it
                                    //ph.Orderid = pizza.Orderid;
                     ph.StoreId = id;
                     ph.Crust = pizza.Crust;
                     ph.Orderdate = DateTime.Now;
-
                     ph.Topping1 = pizza.Topping1;
                     ph.Topping2 = pizza.Topping2;
                     ph.Topping3 = pizza.Topping3;
@@ -124,27 +112,37 @@ namespace PizzaBoxClient.Controllers
                     DL.AddTopping(ph.Topping4);
                     DL.AddTopping(ph.Topping5);
                     TempData["UserId"] = ph.UserId;
-                    DL.cost = DL.TotalCost(DL.cost, ph.Size, DL.top);
-                    DL.orderCount = DL.orderCount + 1;
-
+                   
+                    DL.cost = DL.TotalCost((decimal)TempData["total"], ph.Size, DL.top);
+                    DL.orderCount = (int)HttpContext.Session.GetInt32("Count") + 1;
+                    ViewData["Total"] = DL.cost;
                     try
                     {
+                    TempData["Date"] = ph.Orderdate;
+                    TempData["StoreId"] = id;
+                    TempData["Size"] = pizza.Size;
+                    TempData["Crust"] = pizza.Crust;
+                    TempData["Topping1"] = pizza.Topping1;
+                    TempData["Toping2"] = pizza.Topping2;
+                    TempData["Toping3"] = pizza.Topping3;
+                    TempData["Toping4"] = pizza.Topping4;
+                    TempData["Toping5"] = pizza.Topping5;
+                    TempData["Total"] = (DL.cost);
 
-                        db.addPizza(ph);
-                        db.Save();
 
-                        // TODO: Add insert logic here
-                        //return View();
-                        return RedirectToAction("History");
+                    //db.addPizza(ph);
+                    //db.Save();
+
+                    // TODO: Add insert logic here
+                    //return View();
+                    return RedirectToAction("Confirm");
                     }
                     catch
                     {
+                    
                         return View();
 
                     }
-
-
-
                 }
                 else
                 {
@@ -153,8 +151,50 @@ namespace PizzaBoxClient.Controllers
                 }
             
         }
+        Models.Pizzahistory o;
+        [HttpGet("Confirm")]
+        public ActionResult Confirm(DomainLibrary1.Pizzahistory order)
+        {
+            
+            //foreach (var p in Order)
+            //{
+            ph = new Models.Pizzahistory();
+            ph.Crust = TempData["Crust"].ToString();
+            ph.Size = TempData["Size"].ToString();
+            ph.Topping1 = TempData["Topping1"].ToString();
+            ph.Topping2 = TempData["Topping2"].ToString();
+            ph.Topping3 = TempData["Topping3"].ToString();
+            ph.Topping4 = TempData["Topping4"].ToString();
+            ph.Topping5 = TempData["Topping5"].ToString();
+            PizzaList.Add(ph);
+            var temp = TempData["Total"];
+            ViewData["Text"] = $"Total cost for this pizza is {temp }";
+            TempData.Keep();
+            //}
+            return View(ph);
 
-
+        }
+        [HttpPost("Confirm")]
+        public ActionResult Confirm(Models.Pizzahistory pizzahistory,int id)
+        {
+            if (id == 1) {
+                DomainLibrary1.Pizzahistory ph = new DomainLibrary1.Pizzahistory();
+                ph.Orderdate=(DateTime)TempData["Date"];
+                ph.StoreId = (int)TempData["StoreId"];
+                ph.Crust = TempData["Crust"].ToString();
+                ph.Size = TempData["Size"].ToString();
+                ph.Topping1 = TempData["Topping1"].ToString();
+                ph.Topping2 = TempData["Topping2"].ToString();
+                ph.Topping3 = TempData["Topping3"].ToString();
+                ph.Topping4 = TempData["Topping4"].ToString();
+                ph.Topping5 = TempData["Topping5"].ToString();
+                db.addPizza(ph);
+                db.Save();
+                
+                return RedirectToAction("Index");
+            }
+            return RedirectToAction("PizzaOrder");
+        }
 
         Models.StoreLocation l;
         List<Models.StoreLocation> locations = new List<Models.StoreLocation>();
@@ -172,25 +212,40 @@ namespace PizzaBoxClient.Controllers
                 l.State = loc.State;
                 locations.Add(l);
             }
+
             return View(locations);
+        }
+        [HttpPost("Store")]
+        public ActionResult Store(Models.StoreLocation location,int id){
+            DomainLibrary1.PizzaOrder d = new PizzaOrder();
+            string Id = TempData["UserId"].ToString();
+            var l = db.LastOne(Id);
+            DateTime? temp = l.Orderdate;
+            int? i = l.StoreId;
+            if (d.canTheyLogIn(i,id,temp) == false)
+            {
+                ViewData["Text"] = "Time out on Pizza";
+                return View();
+            }
+            return RedirectToAction("PizzaOrder", "Pizza", id);
         }
         Models.Inventory i;
         public List<Models.Inventory> inventorylist = new List<Models.Inventory>();
         [HttpGet("Inventory")]
-        public ActionResult Inventory(Models.StoreLocation location)
+        public ActionResult Inventory(Models.Inventory inventory)
         {
             var inventories = db.GetInventory();
             foreach (var inv in inventories)
             {
-                //i = new Models.Inventory();
-                //i.StoreId = inv.StoreId;
-                //i.Dough= inv.Dough;
-                //i.Cheese= inv.Cheese;
-                //i.Bacon = inv.Bacon;
-                //i.Anchovies = inv.Anchovies;
-                //i.Ham = inv.Ham;
-                //i.Mushroom = inv.Mushroom;
-                //i.Peperoni = inv.Peperoni;
+                i = new Models.Inventory();
+                i.StoreId = inv.StoreId;
+                i.Dough = inv.Dough;
+                i.Cheese = inv.Cheese;
+                i.Bacon = inv.Bacon;
+                i.Anchovies = inv.Anchovies;
+                i.Ham = inv.Ham;
+                i.Mushroom = inv.Mushroom;
+                i.Peperoni = inv.Peperoni;
 
                 inventorylist.Add(i);
             }

@@ -15,9 +15,12 @@ namespace DomainLibrary1
         void insertCustomer(Customers newCustomer);
         void insertAddress(CustomerAddress newAddress);
         void Save();
+        Pizzahistory LastOne(string id);//new
+
         IEnumerable<Customers> GetCustomers();
         IEnumerable<CustomerAddress> GetAddresses();
         IEnumerable<Pizzahistory> GetPizza();
+        IEnumerable<Pizzahistory> GetPizzahistories(int id);//new
 
         //
 

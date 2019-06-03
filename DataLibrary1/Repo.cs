@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 namespace PizzaBoxContext
 {
+
     public class Repo : IRepo
     {
         /// <summary>
@@ -82,6 +83,14 @@ namespace PizzaBoxContext
             return _db.Pizzahistory.Select(x => Mapper.Map(x));
         }
 
+        public Pizzahistory LastOne(string id)
+        {
+            return Mapper.Map(_db.Pizzahistory.Where(i => i.UserId.Contains(id)).OrderByDescending(i=>i.Orderid).First());
+        }
 
+        public IEnumerable<Pizzahistory> GetPizzahistories(int id)
+        {
+            return Mapper.Map(_db.Pizzahistory.Where(i => i.StoreId==id));
+        }
     }
 }
