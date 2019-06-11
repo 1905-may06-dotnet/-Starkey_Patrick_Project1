@@ -1,0 +1,12 @@
+C:\Revature\-Starkey_Patrick_Project1\DataLibrary1\bin\Release\netstandard2.0\PizzaBoxContext.deps.json
+C:\Revature\-Starkey_Patrick_Project1\DataLibrary1\bin\Release\netstandard2.0\PizzaBoxContext.dll
+C:\Revature\-Starkey_Patrick_Project1\DataLibrary1\bin\Release\netstandard2.0\PizzaBoxContext.pdb
+C:\Revature\-Starkey_Patrick_Project1\DataLibrary1\bin\Release\netstandard2.0\DomainLibrary1.dll
+C:\Revature\-Starkey_Patrick_Project1\DataLibrary1\bin\Release\netstandard2.0\DomainLibrary1.pdb
+C:\Revature\-Starkey_Patrick_Project1\DataLibrary1\obj\Release\netstandard2.0\PizzaBoxContext.csprojAssemblyReference.cache
+C:\Revature\-Starkey_Patrick_Project1\DataLibrary1\obj\Release\netstandard2.0\PizzaBoxContext.csproj.CoreCompileInputs.cache
+C:\Revature\-Starkey_Patrick_Project1\DataLibrary1\obj\Release\netstandard2.0\PizzaBoxContext.AssemblyInfoInputs.cache
+C:\Revature\-Starkey_Patrick_Project1\DataLibrary1\obj\Release\netstandard2.0\PizzaBoxContext.AssemblyInfo.cs
+C:\Revature\-Starkey_Patrick_Project1\DataLibrary1\obj\Release\netstandard2.0\PizzaBoxContext.csproj.CopyComplete
+C:\Revature\-Starkey_Patrick_Project1\DataLibrary1\obj\Release\netstandard2.0\PizzaBoxContext.dll
+C:\Revature\-Starkey_Patrick_Project1\DataLibrary1\obj\Release\netstandard2.0\PizzaBoxContext.pdb
